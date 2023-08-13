@@ -32,11 +32,6 @@ app.engine('handlebars',handlebars.engine())
 app.set('views', __dirname + '/views' )
 app.set('view engine', 'handlebars')
 
-//Rutas
-app.use('/', viewsRouter)
-app.use('/api/products',productsRouter)
-app.use('/api/carts',cartRouter)
-app.use("/api/session", sessionRouter);
 
 //Configurar  Mongo Session
 app.use(
@@ -55,6 +50,14 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+//Rutas
+app.use('/', viewsRouter)
+app.use('/api/products',productsRouter)
+app.use('/api/carts',cartRouter)
+app.use("/api/session", sessionRouter);
+
+
  
 
 //Conección a la Database
